@@ -24,11 +24,42 @@ public class UnitTest1
     }
     
     [Fact]
+    public void FizzBuzz_sequence_no_Fizz_or_Buzz_at_number()
+    {
+        var list = Class1.Generate();
+        var seq = Class1.FizzBuzzify(list);
+        
+        Assert.Equal("7", seq[6]);
+    }
+    
+    [Fact]
     public void FizzBuzz_sequence_prints_Fizz_at_3()
     {
         var list = Class1.Generate();
         var seq = Class1.FizzBuzzify(list);
 
         Assert.Equal("Fizz", seq[2]);
+        Assert.Equal("Fizz", seq[5]);
     }
+
+    [Fact]
+    public void FizzBuzz_sequence_prints_Buzz_at_5()
+    {
+        var list = Class1.Generate();
+        var seq = Class1.FizzBuzzify(list);
+        
+        Assert.Equal("Buzz", seq[4]);
+        Assert.Equal("Buzz", seq[99]);
+    }
+
+    [Fact]
+    public void FizzBuzz_sequence_prints_FizzBuzz_at_15()
+    {
+        var list = Class1.Generate();
+        var seq = Class1.FizzBuzzify(list);
+        
+        Assert.Equal("FizzBuzz", seq[14]);
+    }
+    
+    
 }
