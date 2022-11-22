@@ -55,10 +55,7 @@ public class UnitTest1
     [Fact]
     public void FizzBuzz_sequence_prints_FizzBuzz_at_15()
     {
-        var list = Class1.Generate();
-        var seq = Class1.FizzBuzzify(list);
-        
-        Assert.Equal("FizzBuzz", seq[14]);
+        Assert.Equal("FizzBuzz", Class1.Fizzbuzzify(15));
     }
     
     

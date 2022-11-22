@@ -8,17 +8,27 @@ public class Class1
 
     public static List<string> FizzBuzzify(List<int> list)
     {
-        //return list.Select(i => i.ToString()).ToList();
+        return list.Select(Fizzbuzzify).ToList();
+    }
 
-        return list.Select(i =>
-        {
-            if (i % 15 == 0)
-                return "FizzBuzz";
-            if (i % 3 == 0)
-                return "Fizz";
-            if (i % 5 == 0)
-                return "Buzz";
-            return i.ToString();
-        }).ToList();
+    public static string Fizzbuzzify(int i)
+    {
+        if (IsDivisibleByThree(i) && IsDivisibleByFive(i))
+            return "FizzBuzz";
+        if (IsDivisibleByThree(i))
+            return "Fizz";
+        if (IsDivisibleByFive(i))
+            return "Buzz";
+        return i.ToString();
+    }
+
+    private static bool IsDivisibleByThree(int i)
+    {
+        return i % 3 == 0;
+    }
+
+    private static bool IsDivisibleByFive(int i)
+    {
+        return i % 5 == 0;
     }
 }
